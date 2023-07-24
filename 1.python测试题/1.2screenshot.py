@@ -2,7 +2,7 @@ from selenium import webdriver
 import time
 
 # 设置网站地址
-url = "https://www.163.com"  # 替换为你要渲染的网页地址
+url = "https://www.163.com"  
 
 # 创建 Chrome 浏览器对象，需要安装 Chrome 浏览器和对应版本的 ChromeDriver
 driver = webdriver.Chrome()  # 或者使用 Firefox：webdriver.Firefox()

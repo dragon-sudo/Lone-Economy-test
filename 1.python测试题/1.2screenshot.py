@@ -22,7 +22,15 @@ try:
         image_name = f"screenshot_{timestamp}.png"
 
         # 截取当前网页的屏幕截图并保存为图片
-        driver.save_screenshot(image_name)
+        driver.save_screenshot()
+        pic_path="./"+image_name
+        bk_img = CV2.imread(pic_path)  # 加载图片
+
+        CV2.putText(bk_img, current_time, (100, 300), CV2.FONT_HERSHEY_SIMPLEX,1.2, (255, 0, 0), 2, CV2.LINE_AA)  # 在图片上添加文字信息
+
+        CV2.waitKey()
+
+        CV2.imwrite(pic_path, bk_img)  # 保存修改后的图片
 
         print(f"保存图片成功：{image_name}")
 
